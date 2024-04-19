@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="https://tejasvinuthalapati.vercel.app/admin/style.css">
+    <link rel="stylesheet" href="https://tejasvinuthalapati.vercel.app/admin/mystyle.css">
+     
+    <!----===== Iconscout CSS ===== -->
+ <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Dashboard</title> 
+	
+	
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="manifest" href="../site.webmanifest">
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="https://tejasvinuthalapati.vercel.app/admin/logo-removebg-preview.png" alt="">
+            </div>
+
+            <span class="logo_name">Tejasvi</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name" onclick="dashboardButton()">Dahsboard</span>
+                </a></li>
+               <li><a href="#">
+    <i class="uil uil-plus-square"></i>
+    <span class="link-name" onclick="blogButton()">Add a Blog</span>
+</a></li>    
+<li>
+    <a href="#">
+        <i class="uil uil-document-info"></i> <!-- Icon for guidelines, adjust as needed -->
+        <span class="link-name" onclick="guidelinesButton()">Guidelines</span>
+    </a>
+</li>
+  <!-- 
+
+ <li><a href="#">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Likes</span>
+                </a></li>
+         
+			   <li><a href="#">
+    <i class="uil uil-edit"></i>
+    <span class="link-name">Edit</span>
+</a></li>
+<li><a href="#">
+    <i class="uil uil-sync"></i>
+    <span class="link-name">Update</span>
+</a></li>
+<li><a href="#">
+    <i class="uil uil-trash-alt"></i>
+    <span class="link-name">Delete</span>
+</a></li>
+
+			    <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Analytics</span>
+                </a></li>
+               
+			   <li><a href="#">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Comment</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-share"></i>
+                    <span class="link-name">Share</span>
+                </a></li>-->
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="../portfolio/index.html">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <img src="https://i.ibb.co/X47K3z6/myimg.jpg" alt="">
+        </div>
+
+        <div class="dash-content">
+            <div class="overview" id="divOne">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+
+                <div class="boxes">
+				<div class="box box2">
+    <i class="uil uil-books"></i> <!-- Icon changed to represent "blogs" -->
+    <span class="text">Total Blogs</span>
+    <span class="number" id="blogTotal">-/-</span> <!-- Update this number as per your data -->
+</div>
+<!--
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Total Likes</span>
+                        <span class="number">50,120</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Comments</span>
+                        <span class="number">20,120</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Total Share</span>
+                        <span class="number">10,120</span>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="activity" id="divTwo">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Recent Activity</span>
+                </div>
+
+     <div class="activity-data" id="activity-data">
+                    
+                </div>               
+				
+			 </div>
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 <div id="divThree">
+				
+    <div class="containerBlogAdd">
+      <div class="square">
+	  
+       <form id="imageForm" enctype="multipart/form-data">
+	    <div class="banner" id="banner">
+         <input type="file" name="image" id="imageInput" style="display: none;" required>
+    <label for="imageInput" id="imageLabel" class="banner-upload-btn">
+        <img src="https://tejasvinuthalapati.vercel.app/admin/upload.png" alt="upload banner">
+    </label>
+   
+   
+   </div>
+	   
+<input type="date" id="blogDate" name="blogDate" style="border:none; outline:none; color:black; width:100%; text-align: justify; font-family: 'Open Sans', sans-serif;  color: gray; padding-left:30px; padding-right:30px; margin-top:20px; margin-bottom:10px;">
+
+	   
+	   <div class="h1" style="margin-top:0;"><input type="text" id="title" placeholder="Blog Title" style="border:none; outline:none; color:black;font-weight:600; font-family: 'Merriweather', serif;"></div>
+	  <p><textarea placeholder="Start writing here..." style="border:none; outline:none; color:black;  width:100%;text-align: justify; 
+ font-family: 'Open Sans', sans-serif;
+ font-size: 12px;
+ color: gray;
+ line-height: 18px;
+ height:60px;
+"
+id="text" required></textarea>      </p>
+        
+     <div><input type="submit" class="button" value="Publish" style="border:none; outline:none;"></div>
+</form>     
+
+	 </div>
+    </div>
+   </div>
+  
+
+
+
+
+
+
+
+
+
+<div id="divFour">
+				
+    <div class="containerBlogAdd">
+      <div class="square">
+	  
+       <form id="updateForm" enctype="multipart/form-data">
+	
+  <div class="banner bannerUpdate" id="banner">
+         <input type="file" name="image" id="imageInput"  style="display:none;" >
+    <label for="imageInput" id="imageLabel" class="banner-upload-btn imageLabelUpdate">
+        <img src="https://tejasvinuthalapati.vercel.app/admin/upload.png" alt="upload banner">
+    </label>
+   
+   
+   </div>
+	   <input type="hidden" value="" id="blogIdToUpdate">
+	   
+	      
+<input type="date" id="blogDateUpdate" name="blogDate" style="border:none; outline:none; color:black; width:100%; text-align: justify; font-family: 'Open Sans', sans-serif;  color: gray; padding-left:30px; padding-right:30px; margin-top:20px; margin-bottom:10px;">
+
+	   
+	   <div class="h1" style="margin-top:0;"><input type="text" id="titleUpdate" placeholder="Blog Title" style="border:none; outline:none; color:black;font-weight:600; font-family: 'Merriweather', serif;"></div>
+	  <p><textarea placeholder="Start writing here..." style="border:none; outline:none; color:black;  width:100%;text-align: justify; 
+ font-family: 'Open Sans', sans-serif;
+ font-size: 12px;
+ color: gray;
+ line-height: 18px;
+ height:60px;
+"
+id="textUpdate" required></textarea>      </p>
+        
+     <div><input type="submit" class="button" value="Update" style="border:none; outline:none;"></div>
+</form>     
+
+	 </div>
+    </div>
+   </div>
+   
+   
+   
+   
+   
+   <div id="divFive">
+		
+    <div class="containerView">
+      <div class="square">
+        <img src="" class="mask" id="imgView">
+     <div class="h1" id="hView"></div>
+        <p id="pView"></p>
+        
+     <div><a onclick="dashboardButton()" class="button">Dashboard</a></div>
+      </div>
+      
+      
+      
+      </div>
+      
+        
+      
+      
+    </div>
+    
+   
+   
+   
+   
+   
+   
+   <div id="divSix">
+		
+    <div class="containerView">
+      <div class="square" style=" width: 760px; padding:0 40px; padding-bottom:30px;">
+       
+     <div style="text-align: center;
+  margin-top:50px;
+  font-family: 'Merriweather', serif;
+  font-size: 24px;
+"> Guidelines</div>
+      
+  <ul style="margin-top:15px;">
+    <li><strong>&lt;strong&gt;&lt;/strong&gt;</strong>: Use the &lt;strong&gt; or &lt;b&gt; tags to make text bold.</li>
+    <li><em>&lt;em&gt;&lt;/em&gt;</em>: Use the &lt;em&gt; or &lt;i&gt; tags to make text italic.</li>
+    <li><u>&lt;u&gt;&lt;/u&gt;</u>: Use the &lt;u&gt; tag to underline text.</li>
+    <li><s>&lt;s&gt;&lt;/s&gt;</s>: Use the &lt;s&gt; or &lt;strike&gt; tags to apply strikethrough to text.</li>
+    <li><span style="color: red;">&lt;span style="color: red;"&gt;&lt;/span&gt;</span>: Use the <code>color</code> property to change the color of text.</li>
+    <li><span style="font-size: 20px;">&lt;span style="font-size: 20px;"&gt;&lt;/span&gt;</span>: Use the <code>font-size</code> property to change the size of text.</li>
+    <li><span style="font-family: Arial, sans-serif;">&lt;span style="font-family: Arial, sans-serif;"&gt;&lt;/span&gt;</span>: Use the <code>font-family</code> property to change the font family of text.</li>
+    <li><div style="text-align: center;">&lt;div style="text-align: center;"&gt;&lt;/div&gt;</div>: Use the <code>text-align</code> property to align text.</li>
+    <li><span style="text-decoration: underline;">&lt;span style="text-decoration: underline;"&gt;&lt;/span&gt;</span>: Use the <code>text-decoration</code> property to add or remove text decorations.</li>
+    <li><span style="letter-spacing: 2px;">&lt;span style="letter-spacing: 2px;"&gt;&lt;/span&gt;</span>: Use the <code>letter-spacing</code> property to adjust the spacing between characters.</li>
+
+  <li>Line Break: <code>&lt;br&gt;</code> (place this directly on line)</li>
+  <li>Space between two words (nbsp): <code>&amp;nbsp;</code> (place this directly between two words)</li>
+ 
+ </ul>
+		  
+     <div><a onclick="dashboardButton()" class="button" style="margin-left:-2px;">Dashboard</a></div>
+      </div>
+      
+      
+      
+      </div>
+      
+        
+      
+      
+    </div>
+   
+   
+   
+   
+   </div>
+   
+   
+   
+   
+   
+   
+   
+   
+    
+			 
+			 </div>
+            </div>
+        </div>
+    </section>
+	
+			
+<style>
+
+.data img {
+  width: 100%; /* Ensures image fits the container */
+  max-width: 30px;
+  height: auto;
+}
+.data-title {
+    font-weight: 800; /* Set font weight to bold (800) */
+  }
+  #divThree, #divFour, #divFive, #divSix{
+	display:none;
+  }
+
+</style>  
+
+
+  
+<style>
+
+.loading-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}</style>
+
+
+
+<!-- Add this div for the loading animation -->
+<div id="loadingAnimation" class="loading-container">
+  <div class="loading-spinner"></div>
+</div>
+ 
+                	
+			<script>
+			
+ document.getElementById('imageLabel').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.getElementById('imageInput').click();
+});
+
+
+// Set the uploaded image as the background of the div
+document.getElementById('imageInput').addEventListener('change', function () {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        document.getElementById('banner').style.backgroundImage = `url(${e.target.result})`;
+    };
+    reader.readAsDataURL(file);
+});
+
+
+
+
+document.querySelector('.imageLabelUpdate').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('#imageInput').click();
+});
+
+// Set the uploaded image as the background of the div
+document.querySelector('#imageInput').addEventListener('change', function () {
+    const file = this.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        document.querySelector('.bannerUpdate').style.backgroundImage = `url(${e.target.result})`;
+    };
+    reader.readAsDataURL(file);
+});
+
+
+
+document.getElementById('imageForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const text = document.getElementById('text').value;
+    const selectedDate = document.getElementById('blogDate').value; // Get selected date from input type date
+    const formattedDate = new Date(selectedDate).toISOString().split('T')[0]; // Convert selected date to ISO format
+
+    loadingAnimation.style.display = "block";
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('text', text);
+    formData.append('blogDate', formattedDate); // Send selected date to the backend
+    formData.append('image', document.querySelector('input[type="file"]').files[0]);
+
+    try {
+        const response = await fetch('https://blogs-admin-editor.vercel.app/uploadBlogFmma', {
+            method: 'POST',
+            body: formData,
+        });
+        if (response.ok) {
+            loadingAnimation.style.display = "none";
+            alert('Blog uploaded successfully');
+            location.reload();
+        } else {
+            throw new Error('Failed to upload blog');
+        }
+    } catch (error) {
+        console.error('Error uploading blog:', error);
+        loadingAnimation.style.display = "none";
+    }
+});
+
+
+
+async function fetchBlogs() {
+  try {
+    const response = await fetch('https://blogs-admin-editor.vercel.app/blogsFmma');
+    const blogs = await response.json();
+
+    const blogsDiv = document.getElementById('activity-data');
+
+    if (blogs.length === 0) {
+      blogsDiv.innerHTML = '<p>No blogs found</p>';
+    } else {
+      const totalBlogs = blogs.length; // Get the total number of blogs
+      const columns = {
+        sr: { title: 'Sr.', values: [] },
+        title: { title: 'Title', values: [] },
+        date: { title: 'Date', values: [] },
+        image: { title: 'Image', values: [] },
+        actions: { title: 'Actions', values: [] }
+      };
+      blogs.forEach((blog, index) => {
+        const formattedDate = blog.blogDate.split('T')[0];
+        columns.sr.values.push(index + 1);
+        columns.title.values.push(blog.title);
+        columns.date.values.push(formattedDate);
+        columns.image.values.push(`<img src="${blog.url}" alt="Blog image" style="width: 100px;">`);
+        // Prepare HTML string for buttons
+        columns.actions.values.push(
+          `<button  data-id="${blog._id}" class="blogEditBtn">Edit</button> ` +
+          `<button class="blogDeleteButton" data-id="${blog._id}">Delete</button>`+
+ `<button  data-id="${blog._id}" class="blogViewBtn">View</button> ` 		  // Add data-id attribute to store the blog ID
+        );
+      });
+
+      Object.values(columns).forEach(column => {
+        const columnDiv = document.createElement('div');
+        columnDiv.className = 'data';
+
+        const titleSpan = document.createElement('span');
+        titleSpan.className = 'data-title';
+        titleSpan.textContent = column.title;
+        columnDiv.appendChild(titleSpan);
+
+        column.values.forEach(value => {
+          const valueSpan = document.createElement('span');
+          valueSpan.className = 'data-list';
+          if (column.title === 'Image' || column.title === 'Actions') {
+            valueSpan.innerHTML = value; // Correctly set HTML for images and buttons
+          } else {
+            valueSpan.textContent = value;
+          }
+          columnDiv.appendChild(valueSpan);
+        });
+
+        blogsDiv.appendChild(columnDiv);
+      });
+
+      const totalBlogsSpan = document.getElementById('blogTotal');
+      totalBlogsSpan.textContent = totalBlogs.toLocaleString(); // Display total number of blogs
+
+
+// Event listener for "Edit" buttons
+const editButtons = document.querySelectorAll('.blogEditBtn');
+editButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+    const blogId = button.getAttribute('data-id');
+    populateUpdateForm(blogId);
+	
+	document.getElementById("divFour").style.display = "block";
+	document.getElementById("divOne").style.display = "none";
+	document.getElementById("divTwo").style.display = "none";
+	document.getElementById("divThree").style.display = "none";
+  });
+});
+
+
+// Event listener for "Edit" buttons
+const viewButtons = document.querySelectorAll('.blogViewBtn');
+viewButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+    const blogId = button.getAttribute('data-id');
+    populateView(blogId);
+	
+	document.getElementById("divFive").style.display = "block";
+	document.getElementById("divFour").style.display = "none";
+	document.getElementById("divOne").style.display = "none";
+	document.getElementById("divTwo").style.display = "none";
+	document.getElementById("divThree").style.display = "none";
+  });
+});
+
+
+      // Add event listener for delete buttons
+      const deleteButtons = document.querySelectorAll('.blogDeleteButton');
+      deleteButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+          const blogId = button.getAttribute('data-id');
+          const confirmDelete = confirm('Are you sure you want to delete this data?');
+
+          if (confirmDelete) {
+            try {
+              const deleteResponse = await fetch(
+                `https://blogs-admin-editor.vercel.app/blogtodeleteFmma/${blogId}`,
+                {
+                  method: 'DELETE',
+                }
+              );
+              if (deleteResponse.ok) {
+                alert('Blog deleted successfully');
+                location.reload();
+              } else {
+                throw new Error('Error deleting Data');
+              }
+            } catch (error) {
+              alert('Error deleting data');
+              console.error(error);
+            }
+          } else {
+            // User clicked "Cancel," do nothing
+            return;
+          }
+        });
+      });
+    }
+  } catch (error) {
+    console.error('Error fetching blogs:', error);
+  }
+}
+
+
+// Function to fetch and populate the form fields for updating a blog
+async function populateUpdateForm(blogId) {
+  try {
+    const response = await fetch(`https://blogs-admin-editor.vercel.app/blogFmma/${blogId}`);
+    const blog = await response.json();
+
+    // Populate form fields with blog data
+    document.getElementById('titleUpdate').value = blog.title;
+    document.getElementById('textUpdate').value = blog.text;
+document.getElementById('blogIdToUpdate').value = blogId;
+
+const blogDate = blog.blogDate.split('T')[0]; 
+document.getElementById('blogDateUpdate').value = blogDate; 
+
+document.querySelector('.bannerUpdate').style.backgroundImage = `url(${blog.url})`;
+
+
+   
+    } catch (error) {
+    console.error('Error fetching blog details:', error);
+    // Handle error appropriately (e.g., show error message)
+  }
+}
+
+
+
+
+
+
+async function populateView(blogId) {
+  try {
+    const response = await fetch(`https://blogs-admin-editor.vercel.app/blogFmma/${blogId}`);
+    const blog = await response.json();
+
+    // Populate form fields with blog data
+   document.getElementById('hView').textContent = blog.title;
+document.getElementById('pView').textContent = blog.text;
+ const imgDiv = document.getElementById('imgView');
+   
+
+imgDiv.src=`${blog.url}`;
+
+
+
+
+
+
+    } catch (error) {
+    console.error('Error fetching blog details:', error);
+    // Handle error appropriately (e.g., show error message)
+  }
+}
+
+
+fetchBlogs();
+
+
+
+
+
+
+
+
+// Function to handle form submission for updating a blog
+async function handleUpdateFormSubmit(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  const title = document.getElementById('titleUpdate').value;
+  const text = document.getElementById('textUpdate').value;
+  
+  const selectedDate = document.getElementById('blogDateUpdate').value;
+  const formattedDate = new Date(selectedDate).toISOString().split('T')[0]; // Convert selected date to ISO format
+
+  const id = document.getElementById('blogIdToUpdate').value;
+  const imageInput = document.querySelector('input[type="file"]');
+  const loadingAnimation = document.getElementById('loadingAnimation'); // Assuming you have a loading animation element
+
+  loadingAnimation.style.display = "block";
+
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('text', text);
+  formData.append('blogDate', formattedDate);
+
+  if (imageInput.files.length > 0) {
+    // Append the new image file if it exists
+    formData.append('image', imageInput.files[0]);
+  } else {
+    // Append a flag to indicate keeping the previous image
+    formData.append('keepImage', true);
+  }
+
+  try {
+    // Make a PUT request to update the blog
+    const response = await fetch(`https://blogs-admin-editor.vercel.app/updateBlogFmma/${id}`, {
+      method: 'PUT',
+      body: formData,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      loadingAnimation.style.display = "none";
+      alert(data.message); // Show success message
+      location.reload();
+    } else {
+      throw new Error('Failed to update blog');
+    }
+  } catch (error) {
+    console.error('Error updating blog:', error);
+    alert('Error updating blog. Please try again.'); // Show error message
+    loadingAnimation.style.display = "none";
+  }
+}
+
+// Add event listener to the update form
+const updateForm = document.getElementById('updateForm');
+updateForm.addEventListener('submit', handleUpdateFormSubmit);
+
+
+
+
+const dashboardDivOne = document.getElementById("divOne");
+const dashboardDivTwo = document.getElementById("divTwo");
+const dashboardDivThree = document.getElementById("divThree");
+const dashboardDivFour = document.getElementById("divFour");
+const dashboardDivFive = document.getElementById("divFive");
+const dashboardDivSix = document.getElementById("divSix");
+
+function blogButton(){
+	
+	 dashboardDivThree.style.display = "block";
+	 dashboardDivOne.style.display = "none";
+	  dashboardDivTwo.style.display = "none";
+	  dashboardDivFour.style.display = "none";
+	  dashboardDivFive.style.display = "none";
+	  dashboardDivSix.style.display = "none";
+	  
+}
+
+function dashboardButton(){
+	
+	 dashboardDivThree.style.display = "none";
+	 dashboardDivOne.style.display = "block";
+	  dashboardDivTwo.style.display = "block";
+	  dashboardDivFour.style.display = "none";
+	  dashboardDivFive.style.display = "none";
+	  dashboardDivSix.style.display = "none";
+	  
+}
+
+function guidelinesButton(){
+	
+	  dashboardDivSix.style.display = "block";
+	 dashboardDivThree.style.display = "none";
+	 dashboardDivOne.style.display = "none";
+	  dashboardDivTwo.style.display = "none";
+	  dashboardDivFour.style.display = "none";
+	  dashboardDivFive.style.display = "none";
+	  
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+    <script src="https://tejasvinuthalapati.vercel.app/admin/script.js"></script>
+	
+	
+	
+</body>
+</html>
