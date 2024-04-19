@@ -103,13 +103,22 @@
       </section>
 
 
-          <ul class="blog-list" id="blogList" style="margin-top:-150px;">
+          <ul class="blog-list" id="blogList" >
 
 
           </ul>
 
 
-
+<style>
+.blog-list{
+	margin-top:-150px;
+}
+@media (max-width: 767px) {
+.blog-list{
+	margin-top:-150px;
+}
+}
+</style>
       <!-- 
         - #CONTACT
       -->
@@ -327,7 +336,7 @@ async function fetchImages() {
 
         // Set attributes and inner HTML
         liElement.innerHTML = `
-          <div class="blog-card" style="margin-bottom:30px;">
+          <div class="blog-card" style="margin-bottom:40px;">
            <center> <figure class="card-banner" style="max-height:250px; border-radius:0; max-width:300px;">
             <center>  <a href="blog-details.html?blogId=${blog._id}">
                 <img src="${blog.url}" width="1181" height="843" loading="lazy" alt="${blog.title}" class="img-cover" >
